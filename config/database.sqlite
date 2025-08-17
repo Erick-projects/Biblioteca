@@ -1,0 +1,26 @@
+<?php
+class Database {
+    private $host = "127.0.0.1";  
+    private $db_name = "biblioteca"; 
+    private $username = "root";     
+    private $password = "";     
+    private $port = 3306;           
+    public $conn;
+
+    public function getConnection() {
+        $this->conn = null;
+        try {
+            $this->conn = new PDO(
+                "mysql:host={$this->host};port={$this->port};dbname={$this->db_name}", 
+                $this->username, 
+                $this->password
+            );
+            $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        } catch(PDOException $e) {
+            die("Error de conexión a la base de datos: " . $e->getMessage() . "<br>
+                 Verifica que MySQL esté corriendo, que el usuario, contraseña y nombre de base de datos sean correctos.");
+        }
+        return $this->conn;
+    }
+}
+?>
