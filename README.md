@@ -21,3 +21,5 @@ Este proyecto es un sistema de gestión de libros para una biblioteca, desarroll
 - PHP
 - SQLite para la base de datos
 - HTML y CSS para la interfaz
+
+<img width="1698" height="767" alt="image" src="https://github.com/user-attachments/assets/97968925-d026-4061-9f6f-101252bf5bdb" />
